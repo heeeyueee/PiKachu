@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  .skin{
+      position: relative;
+      background-color: rgb(255, 230, 0);
+      height: 100vh;
+  }
+  .nose{
+      position: relative;
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      border-top: 10px solid black;
+      left: 50%;
+      margin-left:-10px ;
+      top: 145px;
+      z-index: 10;
+
+  }
+  .oval{
+      position: absolute;
+      background-color: black;
+      width: 20px;
+      height: 6px;
+      top:-16px;
+      left:-10px;
+      border-radius: 10px 10px 0px 0px;
+  }
+  .eye{
+      position: absolute;
+      border: 3px solid black;
+      background-color: #2e2e2e;
+      height: 64px;
+      width: 64px;
+      left: 50%;
+      top:100px;
+      margin-left: -32px;
+      }
+  .eye.left{
+      transform: translateX(-100px);
+      border-radius: 50%;
+  }
+  .eye.right{
+    transform: translateX(100px);
+    border-radius: 50%;
+  }
+  .point{
+    position: absolute;
+    border: 3px solid black;
+    background-color: #ffffff;
+    height: 27px;
+    width:27px;
+    left: 16%;
+    top:0px;
+    border-radius: 50%;
+  }
+  .face{
+    position: absolute;
+    border: 3px solid black;
+    background-color: rgb(255, 0, 0);
+    height: 88px;
+    width: 88px;
+    left: 50%;
+    top:200px;
+    margin-left: -44px;
+  }
+  .face.left{
+    transform: translateX(-180px);
+    border-radius: 50%;
+    }
+    .face.left img{
+        transform: rotateZ(-230deg);
+        position: absolute;
+        left:-90px
+    }
+    .face.right img{
+     
+    }
+    .face.right{
+    transform: translateX(180px);
+    border-radius: 50%;
+    }
+  .mouth{
+      height: 200px;
+      width: 200px;
+      position: absolute;
+      left:50%;
+      top:180px;
+      margin-left: -100px;
+  }
+  .mouth .up{
+      position: relative;
+      top:-20px;
+      z-index:1
+  }
+  .mouth .up .lip{
+    border:3px solid black;
+    width: 100px;
+    height: 30px;
+    background-color:  rgb(255, 230, 0);;
+    border-top-color: transparent;
+    border-right-color: transparent;
+  }
+  .mouth .up .lip::before{
+    content: '';
+    display: block;
+    position: absolute;
+    background-color:rgb(255, 230, 0);
+    height: 28px;
+    width: 6px;  
+  }
+  .mouth .up .lip.left{
+      border-radius: 0 0 0 50px;
+      position: relative; 
+      transform: rotate(-15deg);   
+      position: absolute;
+      left:50%;
+      margin-left: -50%;
+
+  }
+
+  .mouth .up .lip.left::before{ 
+      right:-5px;  
+      top:-4px;
+
+
+}
+.mouth .up .lip.right{
+    border-radius: 0 0 50px 0;
+    position: relative; 
+    transform: rotate(15deg);  
+    position: absolute;
+    right:50%;
+    margin-right: -50%;
+    
+
+}
+.mouth .up .lip.right::before{ 
+    left:-5px;  
+    top:-4px;
+}
+.mouth .down{
+    height: 150px;
+    position:absolute;
+    width: 100%;
+    top:-4px;
+    overflow: hidden;
+
+}
+.mouth .down .tongue{
+    position: absolute;
+    bottom: 0px;
+    border: 3px solid black;
+    height: 1000px;
+    width: 150px;
+    left: 50%;
+    margin-left: -75px;
+    border-radius: 90px / 300px;
+    background-color: #9b000a;
+    overflow: hidden;
+
+}
+.mouth .down .tongue .tongue-side{
+    position: absolute;
+    background-color: #ff5b5d;
+    height: 200px;
+    width:200px;
+    left: 50%;
+    margin-left: -100px;
+    bottom: -70px;
+    border-radius: 100px;
+    
+}
+@keyframes move{
+    0%{
+        transform: rotate(0deg);
+    }
+    33%{
+        transform: rotate(5deg);
+    }
+    66%{
+        transform: rotate(-5deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+
+}
+.nose:hover{
+    transform-origin: center bottom;
+    animation: move 300ms infinite linear;
+}
+.skin .fighting{
+position: absolute;
+
+color: #2e2e2e;
+bottom: 45%;
+left: 5px;
+overflow: hidden;
+display: flex;
+
+
+
+}
+.skin .fighting .line{
+    width:500px;
+    border-right: 2px solid #2e2e2e;
+    font-size: 16px;
+    font-weight: bolder;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.skin .fighting .animation{
+    animation: grow 4s steps(44) 1s normal both,
+    blink 500ms steps(44) infinite normal;
+
+
+}
+@keyframes grow{
+    from{
+        width: 0;
+    }
+    to{
+        width: 356px;
+    }
+}
+@keyframes blink{
+    from{
+        border-right-color:#2e2e2e ;
+    }
+    to{
+        border-right-color: transparent;
+    }
+}
+
+/*# sourceMappingURL=/style.e308ff8e.css.map */
